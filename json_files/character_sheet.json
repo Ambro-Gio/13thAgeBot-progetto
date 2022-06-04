@@ -1,0 +1,37 @@
+{
+    "name": "",
+    "campaign": "",
+    "race": "",
+    "class": "",
+    "level": 1,
+    "stats":
+    {
+        "str": {"value": 0, "modifier": 0},
+        "con": {"value": 0, "modifier": 0},
+        "dex": {"value": 0, "modifier": 0},
+        "int": {"value": 0, "modifier": 0},
+        "wis": {"value": 0, "modifier": 0},
+        "cha": {"value": 0, "modifier": 0}
+    },
+    "initiative": "",
+    "armor_class": "",
+    "physical_defense": "",
+    "mental_defense" : "",
+    "save_bonuses": "",
+    "hit_points": {"current": "", "max": ""},
+    "recoveries": {"current": 0, "max": 0},
+    "recovery_roll": "",
+    "one_unique_thing": "",
+    "icon_relationships": {},
+    "backgrounds": {},
+    "class_features": [],
+    "racial_power": "",
+    "talents": [],
+    "feats": [],
+    "mps": [],
+    "melee":{},
+    "ranged": {},
+    "equipment": [],
+    "magic_items": [],
+    "balance": 0
+}

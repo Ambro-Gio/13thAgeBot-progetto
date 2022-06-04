@@ -1,0 +1,179 @@
+{
+    "g": {
+        "name": "G",
+        "campaign": "dummy_campaign",
+        "race": "human",
+        "class": "fighter",
+        "level": 1,
+        "stats": {
+            "str": {
+                "value": 18,
+                "modifier": 4
+            },
+            "con": {
+                "value": 16,
+                "modifier": 3
+            },
+            "dex": {
+                "value": 14,
+                "modifier": 2
+            },
+            "int": {
+                "value": 14,
+                "modifier": 2
+            },
+            "wis": {
+                "value": 12,
+                "modifier": 1
+            },
+            "cha": {
+                "value": 6,
+                "modifier": -2
+            }
+        },
+        "initiative": 3,
+        "armor_class": 13,
+        "physical_defense": 14,
+        "mental_defense": 12,
+        "save_bonuses": "",
+        "hit_points": 33,
+        "recoveries": {
+            "current": 9,
+            "max": 9
+        },
+        "recovery_roll": "d10",
+        "one_unique_thing": "Lol",
+        "icon_relationships": {
+            "The Mageflame": {
+                "relationship": "negative relationship",
+                "points": 3
+            }
+        },
+        "backgrounds": {
+            "Swordmaster": 1,
+            "Mercenary Captain": 1,
+            "Sea Rider": 1,
+            "Shieldwall": 5
+        },
+        "class_features": [],
+        "racial_power": "Quick to fight",
+        "talents": [
+            "Cleave",
+            "Comeback Strike",
+            "Counter Attack"
+        ],
+        "feats": [
+            "Human Ingenuity",
+            "Extra Tough"
+        ],
+        "mps": [
+            "Brace for It",
+            "Carve an Opening",
+            "Deadly Assault"
+        ],
+        "melee": {
+            "attack": "strenght + level",
+            "hit": "weapon + strenght",
+            "miss": "level"
+        },
+        "ranged": {
+            "attack": "dex + level",
+            "hit": "weapon + dex",
+            "miss": "-"
+        },
+        "equipment": [
+            "1d4 dagger",
+            "1d4 dagger",
+            "bastone della tracotanza"
+        ],
+        "magic_items": [],
+        "balance": 2500
+    },
+    "yulia": {
+        "name": "Yulia",
+        "campaign": "",
+        "race": "half-elf",
+        "class": "rogue",
+        "level": 1,
+        "stats": {
+            "str": {
+                "value": 11,
+                "modifier": 0
+            },
+            "con": {
+                "value": 11,
+                "modifier": 0
+            },
+            "dex": {
+                "value": 17,
+                "modifier": 3
+            },
+            "int": {
+                "value": 10,
+                "modifier": 0
+            },
+            "wis": {
+                "value": 8,
+                "modifier": -1
+            },
+            "cha": {
+                "value": 16,
+                "modifier": 3
+            }
+        },
+        "initiative": 4,
+        "armor_class": 13,
+        "physical_defense": 13,
+        "mental_defense": 11,
+        "save_bonuses": "",
+        "hit_points": 18,
+        "recoveries": {
+            "current": 8,
+            "max": 8
+        },
+        "recovery_roll": "d8",
+        "one_unique_thing": "Lorem Ipsum etc",
+        "icon_relationships": {
+            "The Tempter": {
+                "relationship": "positive relationship",
+                "points": 3
+            }
+        },
+        "backgrounds": {
+            "Spy Master": 5,
+            "Cat BUrglar": 3
+        },
+        "class_features": [],
+        "racial_power": "Surprising",
+        "talents": [
+            "Shadow Walk",
+            "Cunning",
+            "Improved Sneak Attack"
+        ],
+        "feats": [
+            "Flying Blade"
+        ],
+        "mps": [
+            "Deadly thrust",
+            "Evasive Strike",
+            "Sure Cut",
+            "Flying Blade"
+        ],
+        "melee": {
+            "attack": "dex + level",
+            "hit": "weapon + dex",
+            "miss": "level"
+        },
+        "ranged": {
+            "attack": "dex + level",
+            "hit": "weapon + dex",
+            "miss": "level"
+        },
+        "equipment": [
+            "1d8 dagger",
+            "1d4 dagger"
+        ],
+        "magic_items": [],
+        "balance": 2500
+    }
+}

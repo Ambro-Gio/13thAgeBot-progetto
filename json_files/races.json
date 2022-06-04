@@ -1,0 +1,33 @@
+{
+  "human": {
+    "bonus": {"modifier": ["str", "con", "dex", "int", "wis", "cha"], "quantity": 2},
+    "racial_power": "Quick to fight",
+    "racial_feats": ["Human Ingenuity"]
+  },
+  "half-elf": {
+    "bonus": {"modifier":  ["con", "cha"], "quantity": 2},
+    "racial_power": "Surprising",
+    "racial_feats": [
+      "Heritage of the sword",
+      "Elven Archery",
+      "Half-Elven multiclass mastery"
+    ]
+  },
+    "dwarf": {
+    "bonus": {"modifier": ["con", "wis"], "quantity": 2},
+    "racial_power": "That's your best shot?",
+    "racial_feats": [
+      "Affinity for artifacts",
+      "Ancient grudges",
+      "Dwarven resilience",
+      "Dwarven weapon mastery",
+      "Engineer's aim",
+      "Stonecunning"
+    ]
+  },
+    "dragonic": {
+    "bonus": {"modifier": ["str", "cha"], "quantity": 2},
+    "racial_power": "Breath Weapon",
+    "racial_feats": ["Mighty breath"]
+  }
+}
