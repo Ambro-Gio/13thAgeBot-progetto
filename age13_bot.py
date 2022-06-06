@@ -993,7 +993,7 @@ def add_magic_item(update: Update, context: CallbackContext):
 
     pattern = "^[^,]+,[^,]+$"
     if not re.fullmatch(pattern, "".join(context.args)):
-        update.message.reply_text("Correct usage:\n\"/add_magic_item <charachter name>, <magic item>\"")
+        update.message.reply_text("Correct usage:\n\"/give_magic_item <charachter name>, <magic item>\"")
         return
 
     user_id = update.effective_user.name
@@ -1063,7 +1063,7 @@ def add_item(update: Update, context: CallbackContext):
 
     pattern = "^[^,]+,[^,]+$"
     if not re.fullmatch(pattern, "".join(context.args)):
-        update.message.reply_text("Correct usage:\n\"/add_item <charachter name>, <item>\"")
+        update.message.reply_text("Correct usage:\n\"/give_item <charachter name>, <item>\"")
         return
 
     user_id = update.effective_user.name
