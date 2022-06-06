@@ -95,7 +95,7 @@ def main():
     dispatcher.add_handler(unknown_handler)
 
     updater.start_polling()
-
+    updater.idle()
 
 def cancel(update: Update, context: CallbackContext):
     """Cancels character creation"""
@@ -909,14 +909,20 @@ def roll(update: Update, context: CallbackContext):
 
 
 def gui_dice_roll(update: Update, context: CallbackContext):
+
     """callback function for dice keyboard"""
     dice = int(update.callback_query.data)
-    context.bot.send_message(chat_id=update.effective_chat.id, text=f"{uf.dice_roll(1, dice)['rolls_total']}")
-
+    context.bot.send_message(chat_id=update.effective_chat.id,
+                             text=f"Result for d{dice}: {uf.dice_roll(1, dice)['rolls_total']}")
 
 def save_currency(update: Update, context: CallbackContext):
     """gives currency to a character"""
     user_id = update.effective_user.name
+
+    pattern = "^[^,]+,[0-9]+$"
+    if not re.fullmatch(pattern, "".join(context.args)):
+        update.message.reply_text("Correct usage:\n\"/save_currency <charachter name>, <quantity>\"")
+        return
 
     input_text = (" ".join(context.args)).split(", ")
     pc_name = " ".join(input_text[0].split())
@@ -946,6 +952,12 @@ def save_currency(update: Update, context: CallbackContext):
 
 def pay_currency(update: Update, context: CallbackContext):
     """takes currency from a character"""
+
+    pattern = "^[^,]+,[0-9]+$"
+    if not re.fullmatch(pattern, "".join(context.args)):
+        update.message.reply_text("Correct usage:\n\"/pay_currency <charachter name>, <quantity>\"")
+        return
+
     user_id = update.effective_user.name
 
     input_text = (" ".join(context.args)).split(", ")
@@ -978,6 +990,12 @@ def pay_currency(update: Update, context: CallbackContext):
 
 def add_magic_item(update: Update, context: CallbackContext):
     """adds a magic item to a character inventory"""
+
+    pattern = "^[^,]+,[^,]+$"
+    if not re.fullmatch(pattern, "".join(context.args)):
+        update.message.reply_text("Correct usage:\n\"/add_magic_item <charachter name>, <magic item>\"")
+        return
+
     user_id = update.effective_user.name
 
     input_text = (" ".join(context.args)).split(", ")
@@ -1003,6 +1021,12 @@ def add_magic_item(update: Update, context: CallbackContext):
 
 def leave_magic_item(update: Update, context: CallbackContext):
     """Takes a magic item from a character inventory"""
+
+    pattern = "^[^,]+,[^,]+$"
+    if not re.fullmatch(pattern, "".join(context.args)):
+        update.message.reply_text("Correct usage:\n\"/leave_magic_item <charachter name>, <magic item>\"")
+        return
+
     user_id = update.effective_user.name
 
     input_text = (" ".join(context.args)).split(", ")
@@ -1036,6 +1060,12 @@ def add_item(update: Update, context: CallbackContext):
     input_text[0]: player name
     input_text[1]: item
     """
+
+    pattern = "^[^,]+,[^,]+$"
+    if not re.fullmatch(pattern, "".join(context.args)):
+        update.message.reply_text("Correct usage:\n\"/add_item <charachter name>, <item>\"")
+        return
+
     user_id = update.effective_user.name
 
     input_text = (" ".join(context.args)).split(", ")
@@ -1061,6 +1091,13 @@ def add_item(update: Update, context: CallbackContext):
 
 def leave_item(update: Update, context: CallbackContext):
     """Takes an item from a character inventory"""
+
+
+    pattern = "^[^,]+,[^,]+$"
+    if not re.fullmatch(pattern, "".join(context.args)):
+        update.message.reply_text("Correct usage:\n\"/leave_item <charachter name>, <item>\"")
+        return
+
     user_id = update.effective_user.name
 
     input_text = (" ".join(context.args)).split(", ")
@@ -1091,6 +1128,12 @@ def leave_item(update: Update, context: CallbackContext):
 
 def get_player_sheet(update: Update, context: CallbackContext):
     """prints a character sheet"""
+
+    pattern = ".+"
+    if not re.fullmatch(pattern, "".join(context.args)):
+        update.message.reply_text("Correct usage:\n\"/get_sheet <charachter name>\"")
+        return
+
     user_id = update.effective_user.name
     pc_name = " ".join(context.args)
     pc_name_key = "_".join(context.args).lower()

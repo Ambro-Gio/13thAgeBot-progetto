@@ -173,5 +173,92 @@
         ],
         "magic_items": [],
         "balance": 2500
+    },
+    "jason": {
+        "name": "Jason",
+        "race": "dragonic",
+        "class": "cleric",
+        "level": 1,
+        "stats": {
+            "str": {
+                "value": 18,
+                "modifier": 4
+            },
+            "con": {
+                "value": 13,
+                "modifier": 1
+            },
+            "dex": {
+                "value": 11,
+                "modifier": 0
+            },
+            "int": {
+                "value": 11,
+                "modifier": 0
+            },
+            "wis": {
+                "value": 16,
+                "modifier": 3
+            },
+            "cha": {
+                "value": 13,
+                "modifier": 1
+            }
+        },
+        "initiative": 1,
+        "armor_class": 14,
+        "physical_defense": 13,
+        "mental_defense": 13,
+        "save_bonuses": "",
+        "hit_points": 24,
+        "recoveries": {
+            "current": 8,
+            "max": 8
+        },
+        "recovery_roll": "d8",
+        "one_unique_thing": "Sono una prova",
+        "icon_relationships": {
+            "The Dweller Below": {
+                "relationship": "negative relationship",
+                "points": 3
+            }
+        },
+        "backgrounds": {
+            "Healer": 5,
+            "Archivist": 2,
+            "Bishop": 1
+        },
+        "class_features": [],
+        "racial_power": "Breath Weapon",
+        "talents": [
+            "Domain: Healing",
+            "Domain: Strength",
+            "Domain: Trickery/Illusion"
+        ],
+        "feats": [
+            "Mighty breath"
+        ],
+        "mps": [
+            "Bless",
+            "Shield of Faith",
+            "Javelin of Faith",
+            "Spirits of the Righteous"
+        ],
+        "melee": {
+            "attack": "str + level",
+            "hit": "weapon + str",
+            "miss": "level"
+        },
+        "ranged": {
+            "attack": "dex + level",
+            "hit": "weapon + dex",
+            "miss": "-"
+        },
+        "equipment": [
+            "1d10(-2)dire flail",
+            "1d8(-5) longbow"
+        ],
+        "magic_items": [],
+        "balance": 2500
     }
 }
