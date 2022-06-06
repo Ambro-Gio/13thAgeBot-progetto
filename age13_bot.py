@@ -114,13 +114,14 @@ def cancel(update: Update, context: CallbackContext):
 
 
 def start(update: Update, context: CallbackContext):
+    """start commands. Greets the new user and starts a chat with the bot"""
     context.bot.send_message(chat_id=update.effective_chat.id,
                              text="I'm 13thAge_bot!")
 
 
 def new_pc_start(update: Update, context: CallbackContext):
     """
-    pc creation command. The user is guided through a list of steps to create a new character:
+    Entry point fot the pc creation command. The user is guided through a list of steps to create a new character:
     -name
     -race and class
     -roll for stats
@@ -378,6 +379,7 @@ def new_pc_talent2(update: Update, context: CallbackContext):
 
 
 def new_pc_mps(update: Update, context: CallbackContext):
+    """saves the chosen mps. The choice is presented again until there are no more points"""
     user_id = update.effective_user.name
     pc_mps = update.message.text
 
@@ -431,6 +433,8 @@ def new_pc_mps(update: Update, context: CallbackContext):
 
 
 def new_pc_feat(update: Update, context: CallbackContext):
+    """saves chosen feat. The choice is presented again until there are no more points.
+    When feat points is 0, builds keyboard for attribute rolls choice"""
     user_id = update.effective_user.name
     pc_feat = update.message.text
 
@@ -484,6 +488,7 @@ def new_pc_feat(update: Update, context: CallbackContext):
 
 
 def new_pc_stats(update: Update, context: CallbackContext):
+    """saves attribute rolls choice, until every attribute is assigned"""
     user_id = update.effective_user.name
     pc_stat = update.message.text
 
@@ -519,6 +524,7 @@ def new_pc_stats(update: Update, context: CallbackContext):
 
 
 def new_pc_one_unique_thing(update: Update, context: CallbackContext):
+    """saves the O-U-T. Builds background keyboard"""
     user_id = update.effective_user.name
     pc_out = update.message.text
 
@@ -546,6 +552,7 @@ def new_pc_one_unique_thing(update: Update, context: CallbackContext):
 
 
 def new_pc_background_points(update: Update, context: CallbackContext):
+    """saves background and builds background points keyboard until points reach 0"""
     user_id = update.effective_user.name
     pc_background = update.message.text
 
@@ -568,6 +575,7 @@ def new_pc_background_points(update: Update, context: CallbackContext):
 
 
 def new_pc_background(update: Update, context: CallbackContext):
+    """saves background points and builds background keyboard, until points reach 0"""
     user_id = update.effective_user.name
     pc_background_points = int(update.message.text)
 
@@ -608,6 +616,7 @@ def new_pc_background(update: Update, context: CallbackContext):
 
 
 def new_pc_armor_choice(update: Update, context: CallbackContext):
+    """saves armor choice and builds melee weapon choice"""
     user_id = update.effective_user.name
     pc_armor = update.message.text
 
@@ -635,6 +644,7 @@ def new_pc_armor_choice(update: Update, context: CallbackContext):
 
 
 def new_pc_melee_choice(update: Update, context: CallbackContext):
+    """saves melee weapon choice and builds ranged weapon keyboard"""
     user_id = update.effective_user.name
     pc_melee_weapon = update.message.text
 
@@ -661,6 +671,7 @@ def new_pc_melee_choice(update: Update, context: CallbackContext):
 
 
 def new_pc_ranged_choice(update: Update, context: CallbackContext):
+    """saves ranged weapon choice and builds icon selection keyboard"""
     user_id = update.effective_user.name
     pc_ranged_weapon = update.message.text
 
@@ -689,6 +700,7 @@ def new_pc_ranged_choice(update: Update, context: CallbackContext):
 
 
 def new_pc_icon_choice(update: Update, context: CallbackContext):
+    """saves icon choice and builds icon relationship keyboard"""
     user_id = update.effective_user.name
     pc_icon = update.message.text
 
@@ -715,6 +727,7 @@ def new_pc_icon_choice(update: Update, context: CallbackContext):
 
 
 def new_pc_icon_relationship(update: Update, context: CallbackContext):
+    """saves icon relationship choice and builds icon points keyboard"""
     user_id = update.effective_user.name
     pc_icon_relationship = update.message.text
 
@@ -741,6 +754,8 @@ def new_pc_icon_relationship(update: Update, context: CallbackContext):
 
 
 def new_pc_icon_points(update: Update, context: CallbackContext):
+    """saves icon points. Until points reach 0, it builds icon keyboard again.
+    When points reach 0, saves the finished character on json and ends conversation"""
     user_id = update.effective_user.name
     pc_icon_relationship_points = int(update.message.text)
 
@@ -825,6 +840,7 @@ def new_pc_stats_compute(user_id: str):
 
 
 def help_f(update: Update, context: CallbackContext):
+    """help message"""
     context.bot.send_message(chat_id=update.effective_chat.id,
                              text="A complete list of available commands is present as a suggestion on your telegram keyboard")
 
@@ -893,12 +909,13 @@ def roll(update: Update, context: CallbackContext):
 
 
 def gui_dice_roll(update: Update, context: CallbackContext):
+    """callback function for dice keyboard"""
     dice = int(update.callback_query.data)
     context.bot.send_message(chat_id=update.effective_chat.id, text=f"{uf.dice_roll(1, dice)['rolls_total']}")
 
 
 def save_currency(update: Update, context: CallbackContext):
-
+    """gives currency to a character"""
     user_id = update.effective_user.name
 
     input_text = (" ".join(context.args)).split(", ")
@@ -928,6 +945,7 @@ def save_currency(update: Update, context: CallbackContext):
 
 
 def pay_currency(update: Update, context: CallbackContext):
+    """takes currency from a character"""
     user_id = update.effective_user.name
 
     input_text = (" ".join(context.args)).split(", ")
@@ -959,6 +977,7 @@ def pay_currency(update: Update, context: CallbackContext):
 
 
 def add_magic_item(update: Update, context: CallbackContext):
+    """adds a magic item to a character inventory"""
     user_id = update.effective_user.name
 
     input_text = (" ".join(context.args)).split(", ")
@@ -983,6 +1002,7 @@ def add_magic_item(update: Update, context: CallbackContext):
 
 
 def leave_magic_item(update: Update, context: CallbackContext):
+    """Takes a magic item from a character inventory"""
     user_id = update.effective_user.name
 
     input_text = (" ".join(context.args)).split(", ")
@@ -1040,6 +1060,7 @@ def add_item(update: Update, context: CallbackContext):
 
 
 def leave_item(update: Update, context: CallbackContext):
+    """Takes an item from a character inventory"""
     user_id = update.effective_user.name
 
     input_text = (" ".join(context.args)).split(", ")
@@ -1069,6 +1090,7 @@ def leave_item(update: Update, context: CallbackContext):
 
 
 def get_player_sheet(update: Update, context: CallbackContext):
+    """prints a character sheet"""
     user_id = update.effective_user.name
     pc_name = " ".join(context.args)
     pc_name_key = "_".join(context.args).lower()
@@ -1082,6 +1104,7 @@ def get_player_sheet(update: Update, context: CallbackContext):
 
 
 def unknown(update: Update, context: CallbackContext):
+    """error message for unrecognized commands"""
     context.bot.send_message(chat_id=update.effective_chat.id, text='Unknown command, try /help')
 
 

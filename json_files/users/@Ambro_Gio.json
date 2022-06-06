@@ -1,7 +1,6 @@
 {
     "g": {
         "name": "G",
-        "campaign": "dummy_campaign",
         "race": "human",
         "class": "fighter",
         "level": 1,
@@ -91,7 +90,6 @@
     },
     "yulia": {
         "name": "Yulia",
-        "campaign": "",
         "race": "half-elf",
         "class": "rogue",
         "level": 1,
