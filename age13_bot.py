@@ -921,7 +921,7 @@ def save_currency(update: Update, context: CallbackContext):
 
     pattern = "^[^,]+,[0-9]+$"
     if not re.fullmatch(pattern, "".join(context.args)):
-        update.message.reply_text("Correct usage:\n\"/save_currency <charachter name>, <quantity>\"")
+        update.message.reply_text("Correct usage:\n\"/save_currency <character name>, <quantity>\"")
         return
 
     input_text = (" ".join(context.args)).split(", ")
@@ -955,7 +955,7 @@ def pay_currency(update: Update, context: CallbackContext):
 
     pattern = "^[^,]+,[0-9]+$"
     if not re.fullmatch(pattern, "".join(context.args)):
-        update.message.reply_text("Correct usage:\n\"/pay_currency <charachter name>, <quantity>\"")
+        update.message.reply_text("Correct usage:\n\"/pay_currency <character name>, <quantity>\"")
         return
 
     user_id = update.effective_user.name
@@ -993,7 +993,7 @@ def add_magic_item(update: Update, context: CallbackContext):
 
     pattern = "^[^,]+,[^,]+$"
     if not re.fullmatch(pattern, "".join(context.args)):
-        update.message.reply_text("Correct usage:\n\"/give_magic_item <charachter name>, <magic item>\"")
+        update.message.reply_text("Correct usage:\n\"/give_magic_item <character name>, <magic item>\"")
         return
 
     user_id = update.effective_user.name
@@ -1024,7 +1024,7 @@ def leave_magic_item(update: Update, context: CallbackContext):
 
     pattern = "^[^,]+,[^,]+$"
     if not re.fullmatch(pattern, "".join(context.args)):
-        update.message.reply_text("Correct usage:\n\"/leave_magic_item <charachter name>, <magic item>\"")
+        update.message.reply_text("Correct usage:\n\"/leave_magic_item <character name>, <magic item>\"")
         return
 
     user_id = update.effective_user.name
@@ -1063,7 +1063,7 @@ def add_item(update: Update, context: CallbackContext):
 
     pattern = "^[^,]+,[^,]+$"
     if not re.fullmatch(pattern, "".join(context.args)):
-        update.message.reply_text("Correct usage:\n\"/give_item <charachter name>, <item>\"")
+        update.message.reply_text("Correct usage:\n\"/give_item <character name>, <item>\"")
         return
 
     user_id = update.effective_user.name
@@ -1095,7 +1095,7 @@ def leave_item(update: Update, context: CallbackContext):
 
     pattern = "^[^,]+,[^,]+$"
     if not re.fullmatch(pattern, "".join(context.args)):
-        update.message.reply_text("Correct usage:\n\"/leave_item <charachter name>, <item>\"")
+        update.message.reply_text("Correct usage:\n\"/leave_item <character name>, <item>\"")
         return
 
     user_id = update.effective_user.name
@@ -1131,7 +1131,7 @@ def get_player_sheet(update: Update, context: CallbackContext):
 
     pattern = ".+"
     if not re.fullmatch(pattern, "".join(context.args)):
-        update.message.reply_text("Correct usage:\n\"/get_sheet <charachter name>\"")
+        update.message.reply_text("Correct usage:\n\"/get_sheet <character name>\"")
         return
 
     user_id = update.effective_user.name

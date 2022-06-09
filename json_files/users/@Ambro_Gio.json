@@ -83,10 +83,11 @@
         "equipment": [
             "1d4 dagger",
             "1d4 dagger",
-            "bastone della tracotanza"
+            "bastone della tracotanza",
+            "Computer Science Degree"
         ],
         "magic_items": [],
-        "balance": 2500
+        "balance": 2501
     },
     "yulia": {
         "name": "Yulia",
